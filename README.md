@@ -6,9 +6,12 @@ Medical image segmentation involves the extraction of regions of interest from 3
 
 Manual tumor segmentation imposes a high burden on the radiologists and lacks intra- and inter-observer repeatability. Furthermore, many of the current methods for tumor assessment in neuro-oncology practice is based on 2D tumor measurements which cannot provide accurate information about the tumor sub-regions and its response to treatments. Automatic tumor segmentation of 3D MRI scans can facilitate tumor assessments and improve prediction of patient prognosis by providing reproducible volumetric measurements.
 
-nnU-Net is a deep learning framework that automates several aspects of the automated segmentation pipeline, and provides a standardized baseline for biomedical segmentation.
+This study uses a self-adapting, deep learning, biomedical image segmentation framework called [nnU-Net (Isensee et al, 2019)](https://github.com/MIC-DKFZ/nnUNet) to segment meningioma tumors on 3D MRI scans across 4 MRI modalities (T1, T1-CE, T2, T2-FLAIR), and evaluates the deep learning model’s performance using spatial overlap metrics. The model’s segmentation results are also compared with ground truth segmentation images created by radiologists using volumetrics to assess its clinical applicability.
 
-In this project, we use nnU-Net to train a deep learning segmentation model to automatically segment multi-parametric 3D meningioma tumor scans. The scans were manually segmented by expert radiologists, which are used as the ground truth to compare and assess the model generated segmentation. 
+For more information on nnU-Net, please read the following paper:
+
+	Isensee, F., Jaeger, P. F., Kohl, S. A., Petersen, J., & Maier-Hein, K. H. (2020). nnU-Net: a self-configuring method 
+	for deep learning-based biomedical image segmentation. Nature Methods, 1-9.
 
 ## Setup and Configuration
 
