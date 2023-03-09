@@ -1,5 +1,4 @@
-# meningioma-segmentation
- Automated segmentation of Meningioma MRI scans using nnU-Net
+# Automated segmentation of Meningioma MRI scans using nnU-Net
  
 ## Introduction
 
