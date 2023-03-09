@@ -1,5 +1,10 @@
 # Automated segmentation of Meningioma MRI scans using nnU-Net
- 
+
+## Table of Contents
+- [Table of Contents](#table-of-contents)
+- [Setup and Configuration](#setup-and-configuration)
+- [Model Training](#model-training)
+
 ## Introduction
 
 Medical image segmentation involves the extraction of regions of interest from 3D image data, such as from MRI or CT scans. Segmentation helps physicians conduct a more precise analysis of anatomical data by isolating only the important, tumor related areas of a scan.
@@ -17,7 +22,7 @@ For more information on nnU-Net, please read the following paper:
 
 
 
-## Training the models
+## Model Training
 
 
 ## Model Performance Metrics
