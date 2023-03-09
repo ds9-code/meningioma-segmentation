@@ -1,7 +1,6 @@
 # Automated segmentation of Meningioma MRI scans using nnU-Net
 
 ## Table of Contents
-- [Table of Contents](#table-of-contents)
 - [Setup and Configuration](#setup-and-configuration)
 - [Model Training](#model-training)
 
