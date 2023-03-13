@@ -14,12 +14,13 @@ from google.colab import drive
 drive.mount('/content/drive')
 
 base_img_path = f'/content/drive/MyDrive/UPennMeningioma'
+out_dirpath = f'/content/drive/MyDrive/nnUNet/nnUNet_raw_data_base/nnUNet_raw_data/Task510_Meningioma/labelsTr'
+
 patients = os.listdir(base_img_path)
 patients.sort()
 # print(patients)
 print(len(patients))
 
-out_dirpath = f'/content/drive/MyDrive/nnUNet/nnUNet_raw_data_base/nnUNet_raw_data/Task510_Meningioma/labelsTr'
 
 # Create a list of labels we dont want
 bad_labels = [2.0,4.0,5.0,6.0]
