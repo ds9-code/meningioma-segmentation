@@ -20,7 +20,23 @@ For more information on nnU-Net, please read the following paper:
 
 ## Setup and Configuration
 
+### High level configuration notes
 
+- nnU-Net requires the MRI data to be structured in a specific format so the pipeline can process it
+- All images (including labels) must be 3D nifti files (.nii.gz)
+- Base directory (entry point) should always be nnUNet_raw_data_base
+- Each segmentation project is stored and processed as a "Task"
+- Each Task is associated with a unique 3 digit task ID (nnU-Net authors recommend starting from 500 so it does not conflict with pretrained models' task IDs)
+- Maximum task ID is 999
+- The label files must contain segmentation maps that contain consecutive integers, starting with 0: 0, 1, 2, 3, ... n. Each class has its own unique label value.
+- Imaging modalities (T1, T1-CE, T2, FLAIR) are identified by a four-digit integer at the end of the filename.
+
+### My configuration settings
+
+File name setup - nn-UNET expects patient identifier followed by the modality as it is searching for this pattern in the data processing step. Bulk renames were performed on Windows, but can be automated in Python as well. Files were renamed as shown below - 
+- Bulk rename all the T1 modality files to 0001. So 2_t1_ss.nii.gz will be renamed to 2_0001.nii.gz
+- Follow same pattern for T1CE (0001) and T2 (0002) and FLAIR (0003)
+- Rename all segmentation files to have just the patient ID. So 2_segmentation.nii.gz is renamed to 2.nii.gz
 
 ## Model Training
 
