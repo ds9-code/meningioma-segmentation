@@ -8,12 +8,12 @@ import random
 import numpy as np
 
 # Set up folder paths
-base_dir_path = '/cbica/home/sreedhad/comp_space/meningioma_data/Organized_Data'
+base_dir_path = '/cbica/home/ds9/comp_space/meningioma_data/Organized_Data'
 
 # Target folders
-train_folder = '/cbica/home/sreedhad/comp_space/nnUNet_raw_data_base/nnUNet_raw_data/Task501_Meningioma/imagesTr/'
-test_folder = '/cbica/home/sreedhad/comp_space/nnUNet_raw_data_base/nnUNet_raw_data/Task501_Meningioma/imagesTs/'
-labels_folder = '/cbica/home/sreedhad/comp_space/nnUNet_raw_data_base/nnUNet_raw_data/Task501_Meningioma/labelsTr/'
+train_folder = '/cbica/home/ds9/comp_space/nnUNet_raw_data_base/nnUNet_raw_data/Task501_Meningioma/imagesTr/'
+test_folder = '/cbica/home/ds9/comp_space/nnUNet_raw_data_base/nnUNet_raw_data/Task501_Meningioma/imagesTs/'
+labels_folder = '/cbica/home/ds9/comp_space/nnUNet_raw_data_base/nnUNet_raw_data/Task501_Meningioma/labelsTr/'
 
 # Read all directories from source folder into a list and sort
 patients = os.listdir(base_dir_path)

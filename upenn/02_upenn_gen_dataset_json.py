@@ -62,7 +62,7 @@ def generate_dataset_json(output_file: str, imagesTr_dir: str, imagesTs_dir: str
     save_json(json_dict, os.path.join(output_file), sort_keys=sort_keys)
 
 
-target_base = '/cbica/home/sreedhad/comp_space/nnUNet_raw_data_base/nnUNet_raw_data/Task501_Meningioma/'
+target_base = '/cbica/home/ds9/comp_space/nnUNet_raw_data_base/nnUNet_raw_data/Task501_Meningioma/'
 target_imagesTr = join(target_base, "imagesTr")
 target_imagesTs = join(target_base, "imagesTs")
 task_name = 'Task501_Meningioma'

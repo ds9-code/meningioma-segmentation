@@ -6,7 +6,7 @@ import numpy as np
 import os
 import pathlib
 
-base_img_path = '/cbica/home/sreedhad/comp_space/nnUNet_raw_data_base/nnUNet_raw_data/Task501_Meningioma/labelsTr'
+base_img_path = '/cbica/home/ds9/comp_space/nnUNet_raw_data_base/nnUNet_raw_data/Task501_Meningioma/labelsTr'
 
 patients = os.listdir(base_img_path)
 patients.sort()

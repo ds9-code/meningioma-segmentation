@@ -144,10 +144,10 @@ def computeHausdorff95(pred, ground):
 if __name__ == '__main__':
 
     # Change this to the number of patients in your validation set
-    num_val = 54
+    num_val = 0
 
     # Change this to the number of patients in your testing set
-    num_test = 10
+    num_test = 72
 
     total_patients = num_val + num_test
 
@@ -232,45 +232,6 @@ if __name__ == '__main__':
     # Create an excel file and write the mean & std of each statistic to it
     # You can change this to your desired name
 
-    validation_summary_file = 'summary_statistics_validation.csv'
-    header = [
-        'Region',
-        'Dice (mean)', 'Dice (median)', 'Dice (std)',
-        'Sensitivity (mean)', 'Sensitivity (median)', 'Sensitivity (std)',
-        'Hausdorff 95 (mean)', 'Hausdorff 95 (median)', 'Hausdorff 95 (std)']
-    validation_data = [
-        ['Whole Tumor',
-        np.nanmean(dice_stats[0][0:num_val]), np.nanmedian(dice_stats[0][0:num_val]), np.nanstd(dice_stats[0][0:num_val]),
-        np.nanmean(sensitivity_stats[0][0:num_val]), np.nanmedian(sensitivity_stats[0][0:num_val]), np.nanstd(sensitivity_stats[0][0:num_val]),
-        np.nanmean(hd_stats[0][0:num_val]), np.nanmedian(hd_stats[0][0:num_val]), np.nanstd(hd_stats[0][0:num_val])],
-        ['Enhancing Core',
-        np.nanmean(dice_stats[1][0:num_val]), np.nanmedian(dice_stats[1][0:num_val]), np.nanstd(dice_stats[1][0:num_val]),
-        np.nanmean(sensitivity_stats[1][0:num_val]),  np.nanmedian(sensitivity_stats[1][0:num_val]), np.nanstd(sensitivity_stats[1][0:num_val]),
-        np.nanmean(hd_stats[1][0:num_val]), np.nanmedian(hd_stats[1][0:num_val]), np.nanstd(hd_stats[1][0:num_val])],
-        ['Non-Enhancing Core',
-        np.nanmean(dice_stats[2][0:num_val]), np.nanmedian(dice_stats[2][0:num_val]), np.nanstd(dice_stats[2][0:num_val]),
-        np.nanmean(sensitivity_stats[2][0:num_val]), np.nanmedian(sensitivity_stats[2][0:num_val]), np.nanstd(sensitivity_stats[2][0:num_val]),
-        np.nanmean(hd_stats[2][0:num_val]), np.nanmedian(hd_stats[2][0:num_val]), np.nanstd(hd_stats[2][0:num_val])],
-        ['Cystic Component',
-        np.nanmean(dice_stats[3][0:num_val]), np.nanmedian(dice_stats[3][0:num_val]), np.nanstd(dice_stats[3][0:num_val]),
-        np.nanmean(sensitivity_stats[3][0:num_val]), np.nanmedian(sensitivity_stats[3][0:num_val]), np.nanstd(sensitivity_stats[3][0:num_val]),
-        np.nanmean(hd_stats[3][0:num_val]), np.nanmedian(hd_stats[3][0:num_val]), np.nanstd(hd_stats[3][0:num_val])],
-        ['Edema',
-        np.nanmean(dice_stats[4][0:num_val]), np.nanmedian(dice_stats[4][0:num_val]), np.nanstd(dice_stats[4][0:num_val]),
-        np.nanmean(sensitivity_stats[4][0:num_val]), np.nanmedian(sensitivity_stats[4][0:num_val]), np.nanstd(sensitivity_stats[4][0:num_val]),
-        np.nanmean(hd_stats[4][0:num_val]), np.nanmedian(hd_stats[4][0:num_val]), np.nanstd(hd_stats[4][0:num_val])],
-        ['NET+C+Ed',
-        np.nanmean(dice_stats[5][0:num_val]), np.nanmedian(dice_stats[5][0:num_val]), np.nanstd(dice_stats[5][0:num_val]),
-        np.nanmean(sensitivity_stats[5][0:num_val]), np.nanmedian(sensitivity_stats[5][0:num_val]), np.nanstd(sensitivity_stats[5][0:num_val]),
-        np.nanmean(hd_stats[5][0:num_val]), np.nanmedian(hd_stats[5][0:num_val]), np.nanstd(hd_stats[5][0:num_val])]
-    ]
-
-    with open(validation_summary_file, 'w', encoding='UTF8', newline='') as val_file:
-        writer = csv.writer(val_file)
-        writer.writerow(header)
-        writer.writerows(validation_data)
-
-    # do the same, but for the test set
     test_summary_file = 'summary_statistics_test.csv'
     header = [
         'Region',
@@ -319,17 +280,3 @@ if __name__ == '__main__':
         writer = csv.writer(f)
         writer.writerow(header)
         writer.writerows(data)
-
-
-    # Create the box plots and save as JPEG images
-
-    # test_dice_stats = dice_stats[0:6][num_val:total_patients]
-
-    # transpose_dice = list(map(list, zip(*test_dice_stats)))
-    # df = DataFrame(transpose_dice)
-    # df.columns = ['WT', 'EC', 'NEC', 'C', 'Edema', 'NEC+C+Ed']
-    # plt.figure()
-    # boxplot = df.boxplot()
-    # plt.title('Test Set Dice Scores Box Plot')
-    # plt.ylabel('DSC')
-    # plt.savefig('dice_bp.jpg')
