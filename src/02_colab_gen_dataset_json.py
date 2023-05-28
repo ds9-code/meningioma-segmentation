@@ -1,3 +1,6 @@
+# DS9 - 11/29/2022
+# Generate metadata JSON file for nnU-Net to use
+
 from typing import Tuple
 import numpy as np
 from batchgenerators.utilities.file_and_folder_operations import *

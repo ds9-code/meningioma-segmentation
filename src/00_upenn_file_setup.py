@@ -1,5 +1,5 @@
 # Setup the meningioma dataset for use by the nnUNet package
-# Diya Sreedhar - 11/29/2022
+# DS9 - 11/29/2022
 
 # Import pacakges
 import shutil
