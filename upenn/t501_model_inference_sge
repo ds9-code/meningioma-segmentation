@@ -28,7 +28,6 @@
 #$ -e /cbica/home/sreedhad/sge_job_output/t501_inference.sh.$JOB_ID.stderr
 ####
 #### My email address:
-#$ -M Diya.Sreedhar@Pennmedicine.upenn.edu
 #### send mail at the beginning of the job
 ## #$ -m b #### UNCOMMENT this line so that it begins with "#$" to enable SGE to send mail at the beginning of the job
 ## #$ -m e #### UNCOMMENT this line so that it begins with "#$" to enable SGE to send mail at the end of the job
