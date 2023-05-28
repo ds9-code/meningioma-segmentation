@@ -5,6 +5,9 @@ from typing import Tuple
 import numpy as np
 from batchgenerators.utilities.file_and_folder_operations import *
 
+from google.colab import drive
+drive.mount('/content/drive')
+
 def get_identifiers_from_splitted_files(folder: str):
     uniques = np.unique([i[:-12] for i in subfiles(folder, suffix='.nii.gz', join=False)])
     return uniques
@@ -62,10 +65,10 @@ def generate_dataset_json(output_file: str, imagesTr_dir: str, imagesTs_dir: str
     save_json(json_dict, os.path.join(output_file), sort_keys=sort_keys)
 
 
-target_base = '/cbica/home/sreedhad/comp_space/nnUNet_raw_data_base/nnUNet_raw_data/Task501_Meningioma/'
+target_base = '/content/drive/MyDrive/nnUNet/nnUNet_raw_data_base/nnUNet_raw_data/Task501_Meningioma/'
 target_imagesTr = join(target_base, "imagesTr")
 target_imagesTs = join(target_base, "imagesTs")
-task_name = 'Task501_Meningioma'
+task_name = 'Task510_Meningioma'
 
 
 generate_dataset_json(join(target_base, 'dataset.json'), target_imagesTr, target_imagesTs, ('T1', 'T1CE', 'T2', 'FLAIR'),
